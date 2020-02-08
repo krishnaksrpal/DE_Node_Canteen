@@ -1,0 +1,92 @@
+[
+  {
+    "superuser": true,
+    "password": "sankalp123",
+    "fullname": "admin",
+    "username": "admin"
+  },
+  {
+    "superuser": false,
+    "password": "ksrm",
+    "fullname": "krishna ksr pal",
+    "enrollment": "170390107011",
+    "email": "170390107011@saffrony.ac.in",
+    "phone_no": "9574308611",
+    "security_question": "what is your pets name",
+    "answer": "none",
+    "username": "170390107011",
+    "balance": {
+      "value": 25,
+      "deducts": {
+        "value": 15,
+        "date": "Nov 15 2019 00:00:00 GMT+0530 (India Standard Time)"
+      }
+    },
+    "coupons": [
+      {
+        "value": 20,
+        "expire-date": "Nov 16 2019 00:00:00 GMT+0530 (India Standard Time)"
+      },
+      {
+        "value": 20,
+        "expire-date": "Nov 17 2019 00:00:00 GMT+0530 (India Standard Time)"
+      }
+    ],
+    "attendence": {
+      "value": 75,
+      "updatedOn": "Nov 05 2019 00:00:00 GMT+0530 (India Standard Time)",
+      "noOfLectures": 100,
+      "totalLectures": 215
+    }
+  },
+  {
+    "fullname": "Harshil M patel",
+    "username": "170390107022",
+    "enrollment": "170390107022",
+    "password": "ksr",
+    "email": "170390107022@saffrony.ac.in",
+    "phone_no": "9727112915",
+    "security_question": "What is your Pet Name?",
+    "answer": "idk",
+    "superuser": false,
+    "balance": {
+      "value": 25,
+      "deducts": {
+        "value": 15,
+        "date": "Nov 15 2019 00:00:00 GMT+0530 (India Standard Time)"
+      }
+    },
+    "coupons": [
+      {
+        "value": 20,
+        "expire-date": "Nov 16 2019 00:00:00 GMT+0530 (India Standard Time)"
+      },
+      {
+        "value": 20,
+        "expire-date": "Nov 17 2019 00:00:00 GMT+0530 (India Standard Time)"
+      }
+    ]
+  },
+  {
+    "fullname": "Sankalp Gupta",
+    "username": "170390107005",
+    "enrollment": "170390107005",
+    "password": "password",
+    "email": "170390107005@saffrony.ac.in",
+    "phone_no": "6353896086",
+    "security_question": "What is Your old Phone Number",
+    "answer": "oldphone",
+    "superuser": false
+  },
+  {
+    "fullname": "jay patel",
+    "username": "170390107024",
+    "enrollment": "170390107024",
+    "password": "12345",
+    "email": "170390107024@saffrony.ac.in",
+    "phone_no": "9727112915",
+    "security_question": "What is your Birthdate?",
+    "answer": "29/7/1999",
+    "superuser": false
+  }
+]

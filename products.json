@@ -1,0 +1,50 @@
+[
+    {
+        "tag":"HOT",
+        "name":"Dabeli",
+        "price":15,
+        "desc":"A Short product description here ",
+        "location":"static/blog/dab.jpg",
+        "type":"FAST FOOD"
+    },
+    {
+        "tag":"HOT",
+        "name":"Vadapav",
+        "price":15,
+        "desc":"A Short product description here ",
+        "location":"static/blog/vad.jpg",
+        "type":"FAST FOOD"
+    },
+    {
+        "tag":"SPECIAL",
+        "name":"Sandwiches",
+        "price":30,
+        "desc":"A Short product description here ",
+        "location":"static/blog/san.jpg",
+        "type":"FAST FOOD"
+    },
+    {
+        "tag":"SALE",
+        "name":"cruchex - smoked garlic",
+        "price":10,
+        "desc":"A Short product description here ",
+        "location":"static/blog/waf.jpg",
+        "type":"PACKED FOOD"
+    },
+    {
+        "tag":"SALE",
+        "name":"Samosa",
+        "price":15,
+        "desc":"A Short product description here ",
+        "location":"static/blog/sam.jpg",
+        "type":"FAST FOOD"
+    },
+    {
+        "tag":"SALE",
+        "name":"kurkure",
+        "price":10,
+        "desc":"A Short product description here ",
+        "location":"static/blog/kur.jpg",
+        "type":"PACKED FOOD"
+    }
+]

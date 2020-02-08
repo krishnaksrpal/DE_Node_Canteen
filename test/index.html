@@ -1,0 +1,232 @@
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Canteen Management System</title>
+    <meta name="viewpoint" content="width-device-width, inital-scale=1.0">
+    <meta http-equiv="X-UA_Compatible" content="ie=edge">
+    <style>
+        html {
+            scroll-behavior: smooth;
+            height: 100%;
+            margin: 0;
+            font-size: 16px;
+            font-family: "Lato", sans-serif;
+            font-weight: 400;
+            line-height: 1.8em;
+            color: #666;
+        }
+
+        body {
+            background-color: #282e34;
+            height: 100%;
+            margin: 0;
+            font-size: 16px;
+            font-family: "Lato", sans-serif;
+            font-weight: 400;
+            line-height: 1.8em;
+            color: #666;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .pimg1,
+        .pimg2,
+        .pimg3 {
+            position: relative;
+            opacity: 0.9;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .pimg1 {
+            background-image: url("static/blog/siteimg/1.jpg");
+            min-height: 100%;
+        }
+
+        .pimg2 {
+            background-image: url('static/blog/siteimg/A1.jpg');
+            min-height: 80%;
+        }
+
+        .pimg3 {
+            background-image: url('static/blog/siteimg/A3.jpg');
+            min-height: 80%;
+        }
+
+        .section {
+            text-align: center;
+            padding: 50px 80px;
+            background-color: #282e34;
+            color: white;
+            font-size: 20px;
+        }
+
+        /* .section-light {
+            background-color: #282e34;
+            color: white;
+            font-size: 27px;
+        } */
+
+        .section-dark {
+            background-color: #282e34;
+            color: white;
+            font-size: 27px;
+            height: 250px;
+        }
+
+        .ptext {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+            color: #000;
+            font-size: 27px;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+        }
+
+        .ptext .border {
+            background-color: #111;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .ptext .border.trans {
+            background-color: #111;
+        }
+
+        @media(max-width:568px) {
+
+            .pimg1,
+            .pimg2,
+            .pimg3 {
+                background-attachment: scroll;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+
+<body>
+    <div class="navbar-fixed" id="top">
+        <nav class="orange">
+            <div class="nav-wrapper">
+                <a href="#">
+                    <img style="width:64px;margin:0 1rem;" class="circle responsive-img" src="./static/blog/logon.jfif"
+                        alt="">
+                </a>
+                <a href="#" class="brand-logo">
+                        <font face="Times new roman">Canteen Management System</font>                </a>
+                <ul id="nav" class="right">
+                    <!-- {% include 'includes/navbar.html' %} -->
+                    <li><a id="home_nav" href="index.html">Home</a></li>
+                    <!-- {% if user.is_authenticated %} -->
+                    <!-- <li><a href="/account">{{user.username|title}}</a></li>
+                        <li><a href="/logout">Logout</a></li>
+                        {% else %} -->
+                    <li><a id="login_account_nav" href="login.html">Login</a></li>
+                    <li><a id="signup_logout_nav" href="signup.html">Signup</a></li>
+                    <!-- {% endif %} -->
+                    <li><a id="about_nav" href="about.html">About</a></li>
+                    <li><a id="emenu_nav" href="eMenu.html">E-Menu</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <br>
+    <!-- {% include 'includes/messages.html' %}{% block content %}{% endblock %} -->
+    <div class="pimg1">
+        <div class="ptext">
+            <span class="border">
+                Hello Visitor!
+            </span>
+        </div>
+    </div>
+    <section class="section section-light">
+        <h2>
+            Welcome to E canteen Management System
+        </h2>
+        <p>
+            Greeting from the Developer's of the website. Our project Canteen Management is an intuitive & interactive
+            way of how food should reach you! NO MORE RUSH! NO MORE WAITING! Ordering food is now at your fingertips.
+        </p>
+    </section>
+    <div class="pimg2">
+        <div class="ptext">
+            <span class="border trans">
+                New here?
+            </span>
+        </div>
+    </div>
+    <section class="section section-dark">
+        <h2>
+            Sign up
+        </h2>
+        <p>
+            Then continue to the Sign-Up page to Register NOW!
+        </p>
+        <div class="card-action">
+            <a href="signup.html" class="btn purple right">
+                Register
+            </a>
+        </div>
+    </section>
+    <div class="pimg3">
+        <div class="ptext">
+            <span class="border trans">
+                Already having an Account?
+            </span>
+        </div>
+    </div>
+    <section class="section">
+        <h2>
+            Sign In
+        </h2>
+        <p>
+            Then login now and order food with ease!!
+        </p>
+        <div class="card-action">
+            <a href="login.html" class="btn purple right">
+                Log in
+            </a>
+        </div>
+        <br>
+    </section>
+    <br>
+    <footer class="page-footer orange">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Design Engineering Project</h5>
+                    <p class="grey-text text-lighten-4"></p>
+                </div>
+                <div class="col 5 offset-2 s12">
+                    <ul>
+                        <li><a class="white-text text-lighten-3" href="#!">
+                                <h5>Contact us @: 6353896086</h5>
+                            </a></li>
+                        <li><a class="white-text text-lighten-3" href="#!">
+                                <h5>
+                                    <h5>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2019
+                <a class="grey-text text-lighten-4 right" href="#top">TO THE TOP</a>
+            </div>
+        </div>
+    </footer>
+    <script src="static/nav.js"></script>
+    <!-- <script src="{% static 'blog/slider.js' %}" charset="utf-8"></script> -->
+</body>
+
+</html>

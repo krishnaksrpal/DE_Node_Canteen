@@ -1,0 +1,215 @@
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Canteen Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+        integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="">
+    <style>
+        body,
+        html {
+            scroll-behavior: smooth;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-image: url("static/blog/bg.jpg");
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .user_card {
+            height: 460px;
+            width: 350px;
+            margin-top: auto;
+            margin-bottom: auto;
+            background: white;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            padding: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -webkit-box-shadow: 0 4px 8px 0 rgba(10, 10, 10, 20), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 5px;
+
+        }
+
+        .brand_logo_container {
+            position: absolute;
+            height: 150px;
+            width: 150px;
+            top: -75px;
+            border-radius: 50%;
+            background: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .brand_logo {
+            height: 125px;
+            width: 125px;
+            border-radius: 50%;
+            border: 2px solid orange;
+        }
+
+        .form_container {
+            margin-top: 100px;
+        }
+
+        .login_btn {
+            width: 100%;
+            background: #c0392b !important;
+            color: white !important;
+        }
+
+        .login_btn:focus {
+            box-shadow: none !important;
+            outline: 0px !important;
+        }
+
+        .login_container {
+            padding: 0 2rem;
+        }
+
+        .input-group-text {
+            background: #c0392b !important;
+            color: white !important;
+            border: 0 !important;
+            border-radius: 0.25rem 0 0 0.25rem !important;
+        }
+
+        .input_user,
+        .input_pass:focus {
+            box-shadow: none !important;
+            outline: 0px !important;
+        }
+
+        .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+            background-color: #c0392b !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar-fixed" id="top">
+        <nav class="orange">
+            <div class="nav-wrapper">
+                <a href="#">
+                    <img style="width:64px;margin:0 1rem;" class="circle responsive-img" src="./static/blog/logon.jfif"
+                        alt="">
+                </a>
+                <a href="#" class="brand-logo">
+                        <font face="Times new roman">Canteen Management System</font>                </a>
+                <ul id="nav" class="right">
+                    <!-- {% include 'includes/navbar.html' %} -->
+                    <li><a id="home_nav" href="index.html">Home</a></li>
+                    <!-- {% if user.is_authenticated %} -->
+                    <!-- <li><a href="/account">{{user.username|title}}</a></li>
+                        <li><a href="/logout">Logout</a></li>
+                        {% else %} -->
+                    <li><a id="login_account_nav" href="login.html">Login</a></li>
+                    <li><a id="signup_logout_nav" href="signup.html">Signup</a></li>
+                    <!-- {% endif %} -->
+                    <li><a id="about_nav" href="about.html">About</a></li>
+                    <li><a id="emenu_nav" href="eMenu.html">E-Menu</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <br>
+    <!-- {% include 'includes/messages.html' %}{% block content %}{% endblock %} -->
+    <div background="">
+        <div class="container h-100">
+            <div class="d-flex justify-content-center h-100">
+                <div class="user_card">
+                    <div class="d-flex justify-content-center">
+                        <div class="brand_logo_container">
+                            <img src="static/blog/users.jpg" class="brand_logo" alt="Logo">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center form_container">
+                        <div class="container">
+                            <form id="login_form">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                    </div>
+                                    <!-- <input type="hidden" name="csrfmiddlewaretoken" class="form-control input_user"
+                                    value="c1cYFeZLsLO1ZlukuPYSYomIEE5yJ8jiWOy1bKVKrmeW01h2eOhW3OR2oBeHWwmC"
+                                    placeholder="username"> -->
+                                    <p><label for="id_username">Username:</label> <input type="text" name="username"
+                                            autofocus required id="id_username"></p>
+                                </div>
+                                <div class="input-group mb-2">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                    </div>
+                                    <p><label for="id_password">Password:</label> <input type="password" name="password"
+                                            required id="id_password"></p>
+                                </div>
+                                <div class="form-group">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customControlInline">
+                                        <label class="custom-control-label" for="customControlInline"><b>Remember
+                                                me</b></label>
+                                    </div>
+                                </div>
+
+
+                                <div class="d-flex justify-content-center mt-10 login_container">
+                                    <input class="btn login_btn" type="submit" value="login"></input>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="mt-5">
+                            <div class="d-flex justify-content-center links">
+                                <p>Don't have an account?<a href=signup>Sign Up</a>
+                            </div>
+                            <div class="d-flex justify-content-center links">
+                                <a href="#">Forgot your password?</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="page-footer orange">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">Design Engineering Project</h5>
+                        <p class="grey-text text-lighten-4"></p>
+                    </div>
+                    <div class="col 5 offset-2 s12">
+                        <ul>
+                            <li><a class="white-text text-lighten-3" href="#!">
+                                    <h5>Contact us @: 6353896086</h5>
+                                </a></li>
+                            <li><a class="white-text text-lighten-3" href="#!">
+                                    <h5>
+                                        <h5>
+                                </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2019
+                    <a class="grey-text text-lighten-4 right" href="#top">TO THE TOP</a>
+                </div>
+            </div>
+        </footer>
+        <script src="static/nav.js"></script>
+        <!-- <script src="{% static 'blog/slider.js' %}" charset="utf-8"></script> -->
+        <script src="./static/login.js"></script>
+    </body>
+
+</html>

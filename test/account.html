@@ -1,0 +1,179 @@
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Canteen Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <style>
+    body    {
+        scroll-behavior: smooth;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background-image: url("static/blog/bg.jpg");
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="navbar-fixed" id="top">
+        <nav class="orange">
+            <div class="nav-wrapper">
+                <a href="#">
+                    <img style="width:64px;margin:0 1rem;" class="circle responsive-img" src="./static/blog/logon.jfif"
+                        alt="">
+                </a>
+                <a href="#" class="brand-logo">
+                        <font face="Times new roman">Canteen Management System</font>
+                </a>
+                <ul id="nav" class="right">
+                    <!-- {% include 'includes/navbar.html' %} -->
+                    <li><a id="home_nav" href="index.html">Home</a></li>
+                    <!-- {% if user.is_authenticated %} -->
+                    <!-- <li><a href="/account">{{user.username|title}}</a></li>
+                        <li><a href="/logout">Logout</a></li>
+                        {% else %} -->
+                    <li><a id="login_account_nav" href="login.html">Login</a></li>
+                    <li><a id="signup_logout_nav" href="signup.html">Signup</a></li>
+                    <!-- {% endif %} -->
+                    <li><a id="about_nav" href="about.html">About</a></li>
+                    <li><a id="emenu_nav" href="eMenu.html">E-Menu</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <br>
+    <!-- {% include 'includes/messages.html' %}{% block content %}{% endblock %} -->
+    <div class="container">
+        <div class="row">
+            <div class="col s5">
+                <div class="coupons_col">
+                    <div class="row">
+                        <div class="balance_row">
+                            <div class="card">
+                                <div class="card-content">
+                                    <div class="card-title">
+                                        balance
+                                    </div>
+                                    <div id="balance-content">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="coupons_row">
+                            <div class="card">
+                                <div class="card-content">
+                                    <div class="card-title">
+                                        coupon
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s6">
+                                            No of coupons
+                                        </div>
+                                        <div id="NoOfCoupons" class="col s6">
+
+                                        </div>
+                                        <div class="col s6">
+                                            Next expiry-date
+                                        </div>
+                                        <div id="expiry-date" class="col s6">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s1"></div>
+            <div class="col s6">
+                <div class="attendence_col">
+                    <div class="row">
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="card-title">
+                                    attendence
+                                </div>
+                                <div id="attendenceval">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="card-title">
+                                    what should you do?
+                                </div>
+                                <div id="doit"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="card">
+            <div class="center">
+                <h1 class="center">
+                    Account Details
+                </h1>
+            </div>
+            <table>
+                <thead>
+                <tr>
+                    <th>property</th>
+                    <th>value</th>
+                    <th>actions</th>
+                </tr>
+                </thead>    
+                <tbody id="account_data">
+                
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <footer class="page-footer orange">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Design Engineering Project</h5>
+                    <p class="grey-text text-lighten-4"></p>
+                </div>
+                <div class="col 5 offset-2 s12">
+                    <ul>
+                        <li><a class="white-text text-lighten-3" href="#!">
+                                <h5>Contact us @: 6353896086</h5>
+                            </a></li>
+                        <li><a class="white-text text-lighten-3" href="#!">
+                                <h5>
+                                    <h5>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2019
+                <a class="grey-text text-lighten-4 right" href="#top">TO THE TOP</a>
+            </div>
+        </div>
+    </footer>
+    <script src="static/nav.js"></script>
+    <script src="static/account.js"></script>
+    <!-- <script src="{% static 'blog/slider.js' %}" charset="utf-8"></script> -->
+</body>
+
+</html>
