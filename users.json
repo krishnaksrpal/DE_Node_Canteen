@@ -3,7 +3,8 @@
     "superuser": true,
     "password": "sankalp123",
     "fullname": "admin",
-    "username": "admin"
+    "username": "admin",
+    "is_admin": true
   },
   {
     "superuser": false,
@@ -88,5 +89,12 @@
     "security_question": "What is your Birthdate?",
     "answer": "29/7/1999",
     "superuser": false
+  },
+  {
+    "fullname":"tejas patel",
+    "username":"tezs",
+    "password":"12345",
+    "email":"tejas.patel@saffrony.ac.in",
+    "is_counseller": true
   }
 ]

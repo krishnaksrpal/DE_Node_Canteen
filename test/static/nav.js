@@ -18,6 +18,18 @@ function checkUser(){
         $("#signup_logout_nav")[0].innerHTML= "Signup";
         $("#signup_logout_nav")[0].href="/signup.html";
     }
+    if(user["is_counseller"]){
+        let lis = document.createElement("li");
+        let list = document.getElementById("nav");
+        lis.innerHTML = "<a href='/uploader'>Upload Data</a>";
+        nav.append(lis);
+    }
+    if(user["is_admin"]){
+        let lis = document.createElement("li");
+        let list = document.getElementById("nav");
+        lis.innerHTML = "<a href='/admin'>Admin</a>";
+        nav.append(lis);
+    }
 }
 function logout(){
     localStorage.removeItem("user");
