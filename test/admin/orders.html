@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="../static/Sassets/css/bootstrap.min.css">
   <!-- Material Design Bootstrap -->
   <link rel="stylesheet" href="../static/Sassets/css/mdb.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -81,18 +82,18 @@
           <!-- Card image -->
           <div class="view view-cascade gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
 
-            <div>
+            <!-- <div>
               <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2"><i class="fas fa-th-large mt-0"></i></button>
               <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2"><i class="fas fa-columns mt-0"></i></button>
-            </div>
+            </div> -->
 
             <a href="" class="white-text mx-3">Orders</a>
 
-            <div>
+            <!-- <div>
               <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2"><i class="fas fa-pencil-alt mt-0"></i></button>
               <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2"><i class="fas fa-eraser mt-0"></i></button>
               <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2"><i class="fas fa-info-circle mt-0"></i></button>
-            </div>
+            </div> -->
 
           </div>
           <!-- /Card image -->
@@ -117,6 +118,7 @@
                     <th class="th-lg"><a href="">Ordered</a></th>
                     <th class="th-lg"><a href="">Total</a></th>
                     <th class="th-lg"><a href="">Status</a></th>
+                    <th class="th-lg"><a href="">Action</a></th>
                   </tr>
                 </thead>
                 <!-- Table head -->
@@ -134,6 +136,10 @@
                         <td>1 Half lunch + 1 Kurkure</td>
                         <td>45 Rs.</td>
                         <td style="color: red;"><b>Being Prepared</b></td>
+                        <td style="padding: 0%;">
+                          <button class="btn-floating btn-small green"><i class="white-text small material-icons">check</i></button>
+                          <button class="btn-floating btn-small red"><i class="white-text small material-icons">close</i></button>
+                        </td>
                       </tr>
                       <tr>
                         <th scope="row">
