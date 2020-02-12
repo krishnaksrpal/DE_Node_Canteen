@@ -110,3 +110,6 @@ $(".btn-floating").click(function (e) {
     localStorage.setItem("change",JSON.stringify(change));
     location.replace("/changeattributes.html");
 });
+if(user["is_counseller"] || user["is_admin"]){
+    $("#remove")[0].innerHTML = "";
+}
