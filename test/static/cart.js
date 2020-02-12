@@ -245,7 +245,9 @@ function makeOrder(){
         data: {
             from    :   user["username"],
             to      :   "admin",
-            total   :   total
+            total   :   total,
+            order : show,
+            status : "Being Prepared"
         },
         // dataType: "dataType",
         success: function (response) {
@@ -257,7 +259,7 @@ function makeOrder(){
                 data: {
                     user:user,
                     from : sendbalance,
-                    to : JSON.stringify(user["balance"])
+                    to : user["balance"]
                 },
                 // dataType: "dataType",
                 success: function (response) {
@@ -274,7 +276,7 @@ function makeOrder(){
                 data: {
                     user:user,
                     from : sendcoupons,
-                    to : JSON.stringify(user["coupons"])
+                    to : user["coupons"]
                 },
                 // dataType: "dataType",
                 success: function (response) {
