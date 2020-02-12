@@ -243,7 +243,10 @@ function makeOrder(){
         type: "post",
         url: "/trans",
         data: {
-            from    :   user["username"],
+            from    :   {
+                name: user["fullname"],
+                username: user["username"]
+            },
             to      :   "admin",
             total   :   total,
             order : show,
