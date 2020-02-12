@@ -173,11 +173,19 @@ app.post("/change/:type", (req, res) => {
 });
 
 app.post("/trans", (req, res) => {
-    console.log(req.params);
-    console.log(req.body);
-    console.log(req.query);
+    // console.log(req.params);
+    // console.log(req.body);
+    // console.log(req.query);
     data.savetrans(req.body);
     res.send(req.body);
+})
+app.post("/trans/all",(req,res)=>{
+    console.log(req.body.trans);
+    data.allTrans(req.body.trans);
+    res.send("ok");
+})
+app.get("/trans",(req,res)=>{
+    res.send(data.getTrans());
 })
 app.get("/products", (req, res) => {
     res.send(products);
