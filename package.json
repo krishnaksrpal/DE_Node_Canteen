@@ -5,9 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "node main.js",
-    "test" :"nodemon main.js",
-    "add" : "git add .",
-    "push" : "git push -u "
+    "test" :"nodemon main.js"
   },
   "author": "",
   "license": "ISC",
