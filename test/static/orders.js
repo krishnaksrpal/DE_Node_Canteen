@@ -11,8 +11,8 @@ function updateTable(data) {
     let count = 0;
     str = "";
     let order;
-    // transactions = data;
-    data.forEach(trans => {
+    for (let i = data.length-1; i >= 0 ; i--) {
+        const trans = data[i];
         str += '<tr><th scope="row"><input class="form-check-input" type="checkbox" id="checkbox1"><label class="form-check-label" for="checkbox1" class="label-table"></label></th>';
         str += '<td>' + trans["from"]["name"] + '</td>';
         str += '<td>' + trans["from"]["username"] + '</td>' + '<td>';
@@ -33,7 +33,7 @@ function updateTable(data) {
             str += '<td style="color: green;"><b>Food Delivered</b></td>';
             count += 2;
         }
-    })
+    }
     table.innerHTML = str;
 
 
@@ -42,16 +42,20 @@ document.onclick = (ev) => {
     console.log(ev.target.offsetParent.id);
 
     if ((ev.target.offsetParent.id) % 2 == 0) {
-        if (transactions[ev.target.offsetParent.id / 2]["status"] == "Being Prepared") {
-            transactions[ev.target.offsetParent.id / 2]["status"] = "Food Prepared";
+        if (transactions[transactions.length -1- (ev.target.offsetParent.id / 2)]["status"] == "Being Prepared") {
+            transactions[transactions.length -1- (ev.target.offsetParent.id / 2)]["status"] = "Food Prepared";
         }
-        else if (transactions[ev.target.offsetParent.id / 2]["status"] == "Food Prepared") {
-            transactions[ev.target.offsetParent.id / 2]["status"] = "Food Delivered";
+        else if (transactions[transactions.length-1-(ev.target.offsetParent.id / 2)]["status"] == "Food Prepared") {
+            transactions[transactions.length -1- (ev.target.offsetParent.id / 2)]["status"] = "Food Delivered";
         }
     }
-    else {
-        if (transactions[ev.target.offsetParent.id / 2]["status"] == "Food Prepared") {
-            transactions[ev.target.offsetParent.id / 2]["status"] = "Being Prepared";
+    else if((ev.target.offsetParent.id) % 2 == 1) {
+        console.log(transactions[transactions.length -1- ((ev.target.offsetParent.id-1)/ 2)])
+        if (transactions[transactions.length -1- ((ev.target.offsetParent.id-1) / 2)]["status"] == "Food Prepared") {
+            transactions[transactions.length -1- ((ev.target.offsetParent.id-1) / 2)]["status"] = "Being Prepared";
+        }
+        else if(transactions[transactions.length -1- ((ev.target.offsetParent.id-1) / 2)]["status"] == "Being Prepared") {
+            transactions.splice(transactions.length -1- ((ev.target.offsetParent.id-1) / 2),1);
         }
     }
     updateTable(transactions);
