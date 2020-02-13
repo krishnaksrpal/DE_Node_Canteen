@@ -28,7 +28,7 @@ function checkUser(){
         let lis = document.createElement("li");
         let list = document.getElementById("nav");
         lis.innerHTML = "<a href='/admin'>Admin</a>";
-        nav.append(lis);
+        list.append(lis);
     }
 }
 function logout(){
