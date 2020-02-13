@@ -1,14 +1,14 @@
 [
   {
     "superuser": true,
-    "password": "sankalp123",
+    "password": "ksr",
     "fullname": "admin",
     "username": "admin",
     "is_admin": true
   },
   {
     "superuser": false,
-    "password": "ksrm",
+    "password": "ksr",
     "fullname": "krishna ksr pal",
     "enrollment": "170390107011",
     "email": "170390107011@saffrony.ac.in",
@@ -72,7 +72,7 @@
     "fullname": "Sankalp Gupta",
     "username": "170390107005",
     "enrollment": "170390107005",
-    "password": "password",
+    "password": "ksr",
     "email": "170390107005@saffrony.ac.in",
     "phone_no": "6353896086",
     "security_question": "What is Your old Phone Number",
@@ -83,7 +83,7 @@
     "fullname": "jay patel",
     "username": "170390107024",
     "enrollment": "170390107024",
-    "password": "12345",
+    "password": "ksr",
     "email": "170390107024@saffrony.ac.in",
     "phone_no": "9727112915",
     "security_question": "What is your Birthdate?",
@@ -93,7 +93,7 @@
   {
     "fullname":"tejas patel",
     "username":"tezs",
-    "password":"12345",
+    "password":"ksr",
     "email":"tejas.patel@saffrony.ac.in",
     "is_counseller": true
   }
