@@ -297,7 +297,7 @@ function makeOrder(){
                 })
                 clearOrder();
                 setTimeout(()=>{
-                    location.replace("index.html");
+                    location.replace("admin/orders.html");
                 },2000)
             },100);
         }
@@ -307,3 +307,22 @@ function makeOrder(){
 $(document).ready(function(){
     $('.modal').modal();
   });
+
+
+
+
+
+
+
+//   let form = document.getElementById("f1");// action mat likhna
+//   form.onsubmit = func1;
+
+//   function func1(){
+//       let select = document.getElementById("sel");
+//       if(select.value == "ahem"){
+//           location.replace("ahem.html")
+//       }
+//       else{
+//           location.replace("baroda")
+//       }
+//   }

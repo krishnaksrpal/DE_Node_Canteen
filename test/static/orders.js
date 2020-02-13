@@ -1,11 +1,22 @@
 let transactions;
-fetch("/trans").then(res => res.json()).then((data) => {
-    console.log(data);
-    transactions = data;
-    updateTable(data);
-})
-
-
+function fetchtrans(){
+    if(user["is_admin"]){
+        fetch("/trans").then(res => res.json()).then((data) => {
+            console.log(data);
+            transactions = data;
+            updateTable(data);
+        })
+    }
+    else{
+        fetch("/trans/" + user["username"]).then(res => res.json()).then((data) => {
+            console.log(data);
+            transactions = data;
+            updateTable(data);
+        })
+    }
+}
+fetchtrans();
+setInterval(fetchtrans,1000);
 let table = document.getElementById("table");
 function updateTable(data) {
     let count = 0;
@@ -41,7 +52,7 @@ function updateTable(data) {
 document.onclick = (ev) => {
     console.log(ev.target.offsetParent.id);
 
-    if ((ev.target.offsetParent.id) % 2 == 0) {
+    if ((ev.target.offsetParent.id) % 2 == 0 && user["is_admin"]) {
         if (transactions[transactions.length -1- (ev.target.offsetParent.id / 2)]["status"] == "Being Prepared") {
             transactions[transactions.length -1- (ev.target.offsetParent.id / 2)]["status"] = "Food Prepared";
         }
@@ -51,7 +62,7 @@ document.onclick = (ev) => {
     }
     else if((ev.target.offsetParent.id) % 2 == 1) {
         console.log(transactions[transactions.length -1- ((ev.target.offsetParent.id-1)/ 2)])
-        if (transactions[transactions.length -1- ((ev.target.offsetParent.id-1) / 2)]["status"] == "Food Prepared") {
+        if (transactions[transactions.length -1- ((ev.target.offsetParent.id-1) / 2)]["status"] == "Food Prepared" && user["is_admin"]) {
             transactions[transactions.length -1- ((ev.target.offsetParent.id-1) / 2)]["status"] = "Being Prepared";
         }
         else if(transactions[transactions.length -1- ((ev.target.offsetParent.id-1) / 2)]["status"] == "Being Prepared") {
@@ -59,14 +70,28 @@ document.onclick = (ev) => {
         }
     }
     updateTable(transactions);
-    $.ajax({
-        type: "post",
-        url: "/trans/all",
-        data: {trans:transactions},
-        // dataType: "dataType",
-        success: function (response) {
-            console.log(response)
-            console.log(transactions);
-        }
-    });
+    if(user["is_admin"]){
+        $.ajax({
+            type: "post",
+            url: "/trans/all",
+            data: {trans:transactions},
+            // dataType: "dataType",
+            success: function (response) {
+                console.log(response)
+                console.log(transactions);
+            }
+        });
+    }
+    else {
+        $.ajax({
+            type: "post",
+            url: "/trans/all/"+user["username"],
+            data: {trans:transactions},
+            // dataType: "dataType",
+            success: function (response) {
+                console.log(response)
+                console.log(transactions);
+            }
+        });
+    }
 }
