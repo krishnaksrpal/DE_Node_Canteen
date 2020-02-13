@@ -27,7 +27,7 @@ function checkUser(){
     if(user["is_admin"]){
         let lis = document.createElement("li");
         let list = document.getElementById("nav");
-        lis.innerHTML = "<a href='/admin'>Admin</a>";
+        lis.innerHTML = "<a href='/admin'>Admin Panel</a>";
         list.append(lis);
     }
 }

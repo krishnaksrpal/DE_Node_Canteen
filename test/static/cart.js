@@ -291,8 +291,12 @@ function makeOrder(){
                 }
             });
             setTimeout(()=>{
+                // M.toast({
+                //     'html':"<h5>"+ response["total"] +" sent to "+response["to"]+"</h5>",
+                //     'classes' : "green white-text rounded"
+                // })
                 M.toast({
-                    'html':"<h5>"+ response["total"] +" sent to "+response["to"]+"</h5>",
+                    'html':"<h5>Order Sent!</h5>",
                     'classes' : "green white-text rounded"
                 })
                 clearOrder();
