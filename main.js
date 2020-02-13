@@ -7,6 +7,7 @@ var data = require("./data");
 var users = data.getUsers();
 var products = data.getProducts();
 var trans = data.getTrans();
+var notis = data.getNoti();
 console.log(users);
 // var date = new Date(users[1]["coupons"][0]["expire-date"])
 // console.log(new Date(JSON.parse(JSON.stringify(date))).toString(),date.toString(), (new Date(2019,11,05).toString()),new Date(),new Date().toString(),new Date(new Date().toString()));
@@ -108,12 +109,12 @@ app.post("/upload", (req, res) => {
     if (!req.files || Object.keys(req.files).length === 0) {
         return res.status(400).send('No files were uploaded.');
     }
-    else{
+    else {
         // res.send(req.files.files1.name);
         let file = req.files.files1;
         console.log(file);
-        file.mv("./files/"+file.name,(err)=>{
-            console.log("done",err);
+        file.mv("./files/" + file.name, (err) => {
+            console.log("done", err);
             html = "<html><head> </head><body> <h1><center><img src='http://localhost:5000/static/giphy.gif' width='200px'></center></h1><script>setTimeout(()=>{location.replace('/uploader/');},5000)"
             html += "</script></body></html>"
             res.send(html);
@@ -175,6 +176,27 @@ app.post("/change/:type", (req, res) => {
     res.send(send);
 });
 
+app.get("/noti/:user", (req, res) => {
+    let send = [];
+    notis = data.getNoti();
+    notis.forEach(ele => {
+        if (ele["to"] == req.params.user) {
+            send.push(ele);
+        }
+    });
+    let newA = notis.filter(ele => ele["to"] != req.params.user)
+    console.log(newA);
+    setTimeout(()=>{data.allNoti(newA);},1000);
+    res.send(send);
+});
+
+app.post("/noti",(req,res)=>{
+    console.log(req.body);
+    setTimeout(()=>{data.saveNoti(req.body.noti);},10);
+    
+    res.send("ok");
+})
+
 app.post("/trans", (req, res) => {
     // console.log(req.params);
     // console.log(req.body);
@@ -182,16 +204,16 @@ app.post("/trans", (req, res) => {
     data.savetrans(req.body);
     res.send(req.body);
 })
-app.post("/trans/all",(req,res)=>{
+app.post("/trans/all", (req, res) => {
     console.log(req.body.trans);
     data.allTrans(req.body.trans);
     res.send("ok");
 })
-app.post("/trans/all/:user",(req,res)=>{
+app.post("/trans/all/:user", (req, res) => {
     // console.log(req.body.trans);
-
+    send = [];
     trans.forEach(ele => {
-        if(!(ele["from"]["username"] == req.params.user)){
+        if (!(ele["from"]["username"] == req.params.user)) {
             send.push(ele);
         }
     });
@@ -199,13 +221,13 @@ app.post("/trans/all/:user",(req,res)=>{
     data.allTrans(send);
     res.send("ok");
 })
-app.get("/trans",(req,res)=>{
+app.get("/trans", (req, res) => {
     res.send(data.getTrans());
 })
-app.get("/trans/:user",(req,res)=>{
+app.get("/trans/:user", (req, res) => {
     let send = [];
     trans.forEach(ele => {
-        if(ele["from"]["username"] == req.params.user){
+        if (ele["from"]["username"] == req.params.user) {
             send.push(ele);
         }
     });

@@ -50,6 +50,38 @@
         "quantity": "1"
       }
     },
+    "status": "Food Prepared"
+  },
+  {
+    "from": {
+      "name": "krishna ksr pal",
+      "username": "170390107011"
+    },
+    "to": "admin",
+    "total": "30",
+    "order": {
+      "Dabeli": {
+        "itemName": "Dabeli",
+        "price": "15",
+        "quantity": "2"
+      }
+    },
+    "status": "Being Prepared"
+  },
+  {
+    "from": {
+      "name": "krishna ksr pal",
+      "username": "170390107011"
+    },
+    "to": "admin",
+    "total": "30",
+    "order": {
+      "Vadapav": {
+        "itemName": "Vadapav",
+        "price": "15",
+        "quantity": "2"
+      }
+    },
     "status": "Being Prepared"
   }
 ]
