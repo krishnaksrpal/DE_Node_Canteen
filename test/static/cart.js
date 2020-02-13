@@ -31,7 +31,7 @@ function forModal(total){
     $("#needed").html(total);
     if(user["balance"]){
         if(user["balance"]["deducts"]){
-            str += "<tr><td> previously used coupon </td>"+'<td>'+user["balance"]["deducts"]["value"]+"</td>";
+            str += "<tr><td> Coupon (in Credits) </td>"+'<td>'+user["balance"]["deducts"]["value"]+"</td>";
             if(remain>user["balance"]["deducts"]["value"]){
                 str+="<td>" + user["balance"]["deducts"]["value"] + "</td>";
                 remain = remain - user["balance"]["deducts"]["value"];
