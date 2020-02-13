@@ -114,7 +114,9 @@ app.post("/upload", (req, res) => {
         console.log(file);
         file.mv("./files/"+file.name,(err)=>{
             console.log("done",err);
-            res.send("ok");
+            html = "<html><head> </head><body> <h1><center><img src='http://localhost:5000/static/giphy.gif' width='200px'></center></h1><script>setTimeout(()=>{location.replace('/uploader/');},5000)"
+            html += "</script></body></html>"
+            res.send(html);
         })
     }
 })
