@@ -6,6 +6,7 @@ var app = express();
 var data = require("./data");
 var users = data.getUsers();
 var products = data.getProducts();
+var trans = data.getTrans();
 console.log(users);
 // var date = new Date(users[1]["coupons"][0]["expire-date"])
 // console.log(new Date(JSON.parse(JSON.stringify(date))).toString(),date.toString(), (new Date(2019,11,05).toString()),new Date(),new Date().toString(),new Date(new Date().toString()));
@@ -184,8 +185,29 @@ app.post("/trans/all",(req,res)=>{
     data.allTrans(req.body.trans);
     res.send("ok");
 })
+app.post("/trans/all/:user",(req,res)=>{
+    // console.log(req.body.trans);
+
+    trans.forEach(ele => {
+        if(!(ele["from"]["username"] == req.params.user)){
+            send.push(ele);
+        }
+    });
+    send.push(...req.body.trans)
+    data.allTrans(send);
+    res.send("ok");
+})
 app.get("/trans",(req,res)=>{
     res.send(data.getTrans());
+})
+app.get("/trans/:user",(req,res)=>{
+    let send = [];
+    trans.forEach(ele => {
+        if(ele["from"]["username"] == req.params.user){
+            send.push(ele);
+        }
+    });
+    res.send(send);
 })
 app.get("/products", (req, res) => {
     res.send(products);
