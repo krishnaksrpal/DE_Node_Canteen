@@ -3,14 +3,20 @@
 <head>
     <meta charset="utf-8">
     <title>Weekly DataSheet</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" charset="utf-8"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+<!--Nav Scripts/css's starts-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script>
+        $(document).ready(function()
+        {$('.sidenav').sidenav();})
+    </script>
+<!--Nav Scripts/css's ends-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
-        integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="">
     <style>
         .inf__drop-area * {
             box-sizing: border-box;
@@ -79,13 +85,15 @@
             height: 100%;
             background-image: url("../static/blog/bg.jpg");
             background-attachment: fixed;
+            max-width: 100%;
+            max-height: 100%;
             background-size: cover;
         }
 
         form {
             display: block;
-            width: 200%;
-            max-width: 460px;
+            
+            width:100%;
             margin: 0 auto;
             background-color: #fafbfb;
             color: #6b6b6b;
@@ -94,8 +102,11 @@
         }
 
         .user_card {
-            height: 550px;
-            width: 490px;
+            max-height: 90vh;
+            min-height: 75vh;
+            max-width: 350px;
+            min-width: 350px;
+            width: 390px;
             margin-top: auto;
             margin-bottom: auto;
             background: white;
@@ -141,10 +152,11 @@
         }
 
         .month {
-            width: 50%;
+            width: 100%;
             background: #c0392b !important;
             color: white !important;
             margin-top: -20px;
+            font-size: 15px
         }
 
         .uploader_btn:focus {
@@ -156,41 +168,58 @@
         .uploader_container {
             padding: 0 2rem;
         }
+    
+
     </style>
 </head>
 
 <body>
-    <div class="navbar-fixed" id="top">
+    <!--Nav Menu-->
+    <div id="top">
         <nav class="orange">
             <div class="nav-wrapper">
+                <img style="max-height: 100%; max-width:100%;margin:0 1rem;" class="circle responsive-img" src="../static/blog/logon.jfif"
+                        alt="logo">
+
+                <a href="#" class="sidenav-trigger" data-target="mobile-nav">
+                    <i class="material-icons">menu</i> </a>
                 <a href="#">
-                    <img style="width:64px;margin:0 1rem;" class="circle responsive-img" src="../static/blog/logon.jfif"
-                        alt="">
-                </a>
-                <a href="#" class="brand-logo">
-                    <font face="Times new roman">Canteen Management System</font>
-                </a>
-                <ul id="nav" class="right">
-                    <!-- {% include 'includes/navbar.html' %} -->
-                    <li><a id="home_nav" href="../index.html">Home</a></li>
+                <font style="font-size: 2.5vw;  position: absolute; " face="Times new roman">Canteen Management System</font></a>
+                <ul id="nav" class="right hide-on-med-and-down">
+                         <li><a href="index.html">Home</a></li>
                     <!-- {% if user.is_authenticated %} -->
                     <!-- <li><a href="/account">{{user.username|title}}</a></li>
                         <li><a href="/logout">Logout</a></li>
                         {% else %} -->
-
                     <li><a id="login_account_nav" href="login.html">Login</a></li>
                     <li><a id="signup_logout_nav" href="signup.html">Signup</a></li>
                     <!-- {% endif %} -->
                     <li><a id="about_nav" href="about.html">About</a></li>
-                    <li><a id="emenu_nav" href="eMenu.html">E-Menu</a></li>
+                    <li><a href="eMenu.html">E-Menu</a></li>
                 </ul>
+
             </div>
         </nav>
+
+        <ul class="sidenav" id="mobile-nav">
+
+                    <li><a href="index.html">Home</a></li>
+                    <!-- {% if user.is_authenticated %} -->
+                    <!-- <li><a href="/account">{{user.username|title}}</a></li>
+                        <li><a href="/logout">Logout</a></li>
+                        {% else %} -->
+                    <li><a id="login_account_nav" href="login.html">Login</a></li>
+                    <li><a id="signup_logout_nav" href="signup.html">Signup</a></li>
+                    <!-- {% endif %} -->
+                    <li><a id="about_nav" href="about.html">About</a></li>
+                    <li><a href="eMenu.html">E-Menu</a></li>
+        </ul>
     </div>
-    <!--Nav Menu-->
+<!--Nav Menu Ends-->
+
     <br>
     <!-- {% include 'includes/messages.html' %}{% block content %}{% endblock %} -->
-    <div background="">
+ 
         <div class="container h-100">
             <div class="d-flex justify-content-center h-100">
                 <div class="user_card">
@@ -204,19 +233,57 @@
                             <form id="uploader_form" action='http://localhost:5000/upload' 
                             method='post' 
                             encType="multipart/form-data">
-                                <p class="month">Month: February</p>
-                                <div class="input-group mb-3">
 
-                                    <!-- <form class="form"> -->
-                                        WEEK 1<input type="file" name="files1">
-                                        <br>
-                                        WEEK 2<input type="file" name="files2" disabled>
-                                        <br>
-                                        WEEK 3<input type="file" name="files3" disabled>
-                                        <br>
-                                        WEEK 4<input type="file" name="files4" disabled>
-                                        <br>
+                                <div style="margin-top: 25px; padding-left: 60px;" class="month" align="left" style="align-content:   center;">
+                                Month: February
+                                <br>From : 16/12/2019
+                                <br>To &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 07/02/2020
+                                </div>
+                                <br>
+
+                                <div>
                                         
+                                        <div> 
+                                          <select style="margin-bottom: 5px"  class="browser-default custom-select">
+                                            <option value="" disabled selected>Attendance Type</option>
+                                            <option>Whole Attendance</option>
+                                            <option>Coupon Attendance</option>
+                                          </select>
+                                        </div>
+                                        <div> 
+                                          <select style="margin-bottom: 5px" class="browser-default custom-select">
+                                            <option value="" disabled selected>Choose Discipline</option>
+                                            <option>Degree</option>
+                                            <option>Diploma</option>
+                                          </select>
+                                        </div>
+                                        <div>
+                                          <select style="margin-bottom: 5px" class="browser-default custom-select">
+                                            <option value="" disabled selected>Choose Branch</option>
+                                            <option>Computer</option>
+                                            <option>Mechanical</option>
+                                            <option>Electrical</option>
+                                            <option>Electronics</option>
+                                            <option>Civil</option>
+                                            <option>Automobile</option>
+                                          </select>
+                                        </div>                                        <div>
+                                          <select style="margin-bottom: 15px" class="browser-default custom-select">
+                                            <option value="" disabled selected>Choose Semester</option>
+                                            <option>2nd</option>
+                                            <option>4th</option>
+                                            <option>6th</option>
+                                            <option>8th</option>
+                                          </select>
+                                        </div>
+                                    </div>
+                                    
+
+                                <div class="input-group mb-3">
+                                    <!-- <form class="form"> -->
+                                        <input type="file" name="files1" >
+                                        <br>
+                                                                            
                                     <!-- </form> -->
                                 </div>
                                 <div class="d-flex justify-content-center mt-10 uploader_container">
@@ -230,34 +297,22 @@
                 </div>
             </div>
         </div>
-        <footer class="page-footer orange">
+<!--Footer starts-->
+<footer class="page-footer orange">
+        <div class="container">
+            <div style="height: 20px" class="row">
+
+                    <h6 class="white-text">Design Engineering Project</h6>
+           </div>
+        </div>
+        <div class="footer-copyright">
             <div class="container">
-                <div class="row">
-                    <div class="col l6 s12">
-                        <h5 class="white-text">Design Engineering Project</h5>
-                        <p class="grey-text text-lighten-4"></p>
-                    </div>
-                    <div class="col 5 offset-2 s12">
-                        <ul>
-                            <li><a class="white-text text-lighten-3" href="#!">
-                                    <h5>Contact us @: 6353896086</h5>
-                                </a></li>
-                            <li><a class="white-text text-lighten-3" href="#!">
-                                    <h5>
-                                        <h5>
-                                </a></li>
-                        </ul>
-                    </div>
-                </div>
+                © 2020
+                <a class="grey-text text-lighten-4 right" href="#top">TO THE TOP</a>
             </div>
-            <div class="footer-copyright">
-                <div class="container">
-                    © 2019
-                    <a class="grey-text text-lighten-4 right" href="#top">TO THE TOP</a>
-                </div>
-            </div>
-        </footer>
-        <!--footer-->
+        </div>
+ </footer>
+ <!--Footer ends-->
         <script src="../static/nav.js"></script>
         <script src="../static/noti.js"></script>
         <!-- <script src="{% static 'blog/slider.js' %}" charset="utf-8"></script> -->
