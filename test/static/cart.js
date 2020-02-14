@@ -299,6 +299,11 @@ function makeOrder(){
                     'html':"<h5>Order Sent!</h5>",
                     'classes' : "green white-text rounded"
                 })
+                createNoti({
+                    "from":user["username"],
+                    "to":"admin",
+                    "msg":"New Order Received"
+                })
                 clearOrder();
                 setTimeout(()=>{
                     location.replace("admin/orders.html");

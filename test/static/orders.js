@@ -16,7 +16,7 @@ function fetchtrans() {
     }
 }
 fetchtrans();
-setInterval(fetchtrans, 10000);
+setInterval(fetchtrans, 1000);
 let table = document.getElementById("table");
 function updateTable(data) {
     let count = 0;

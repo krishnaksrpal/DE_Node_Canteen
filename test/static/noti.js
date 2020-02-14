@@ -16,7 +16,7 @@ if (user) {
     fetchnoti();
     setInterval(() => {
         fetchnoti();
-    }, 10000);
+    }, 1000);
 }
 function createNoti(data){
     $.ajax({

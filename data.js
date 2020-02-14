@@ -11,29 +11,31 @@ var notifications = JSON.parse(notification_file);
 
 // console.log(users);
 function get_users() {
-    var users_file = fs.readFileSync("users.json");
-    var users = JSON.parse(users_file);
+    users_file = fs.readFileSync("users.json");
+    users = JSON.parse(users_file);
     return users;
 }
 function get_trans() {
-    var transactions_file = fs.readFileSync("transactions.json");
-    var transactions = JSON.parse(transactions_file);
+    transactions_file = fs.readFileSync("transactions.json");
+    transactions = JSON.parse(transactions_file);
     return transactions;
 }
 function get_noti() {
-    var notification_file = fs.readFileSync("notifications.json");
-    var notifications = JSON.parse(notification_file);
+    notification_file = fs.readFileSync("notifications.json");
+    notifications = JSON.parse(notification_file);
     return notifications;
 }
 function get_products() {
-    var products_file = fs.readFileSync("products.json");
-    var products = JSON.parse(products_file);
+    products_file = fs.readFileSync("products.json");
+    products = JSON.parse(products_file);
     return products;
 }
 function allNoti(notis) {
     fs.writeFileSync("notifications.json", JSON.stringify(notis, null, 2), () => { })
 }
 function saveNoti(noti) {
+    notification_file = fs.readFileSync("notifications.json");
+    notifications = JSON.parse(notification_file);
     notifications.push(noti);
     fs.writeFileSync("notifications.json", JSON.stringify(notifications, null, 2), () => { })
 }

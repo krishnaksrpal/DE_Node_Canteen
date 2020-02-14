@@ -18,6 +18,7 @@ app.use(fileupload());
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 app.get("/login", (req, res) => {
+    users = data.getUsers();
     console.log(req.originalUrl, req.body, req.query);
     // res.send(req.query);
     req.body = req.query;
@@ -63,6 +64,7 @@ app.post("/signup", (req, res) => {
     // console.log(req.originalUrl,req.body,req.query);
     // res.type("application/json");
     // res.send(req.body);
+    users = data.getUsers();
     let enroll = req.body.enrollment;
     let usern = req.body.username;
     let ema = req.body.ema;
@@ -123,6 +125,7 @@ app.post("/upload", (req, res) => {
 })
 
 app.post("/change/:type", (req, res) => {
+    users = data.getUsers();
     console.log(req.params);
     console.log(req.body);
     console.log(req.query);
@@ -191,6 +194,7 @@ app.get("/noti/:user", (req, res) => {
 });
 
 app.post("/noti",(req,res)=>{
+
     console.log(req.body);
     setTimeout(()=>{data.saveNoti(req.body.noti);},10);
     
@@ -211,6 +215,7 @@ app.post("/trans/all", (req, res) => {
 })
 app.post("/trans/all/:user", (req, res) => {
     // console.log(req.body.trans);
+    trans = data.getTrans();
     send = [];
     trans.forEach(ele => {
         if (!(ele["from"]["username"] == req.params.user)) {
@@ -225,6 +230,7 @@ app.get("/trans", (req, res) => {
     res.send(data.getTrans());
 })
 app.get("/trans/:user", (req, res) => {
+    trans = data.getTrans();
     let send = [];
     trans.forEach(ele => {
         if (ele["from"]["username"] == req.params.user) {
@@ -234,6 +240,7 @@ app.get("/trans/:user", (req, res) => {
     res.send(send);
 })
 app.get("/products", (req, res) => {
+    products = data.getProducts();
     res.send(products);
 });
 
