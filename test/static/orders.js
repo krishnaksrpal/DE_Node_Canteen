@@ -25,6 +25,7 @@ function updateTable(data) {
     for (let i = data.length - 1; i >= 0; i--) {
         const trans = data[i];
         str += '<tr><th scope="row"><input class="form-check-input" type="checkbox" id="checkbox1"><label class="form-check-label" for="checkbox1" class="label-table"></label></th>';
+        str += '<td> #ID' + trans["id"] + '</td>';
         str += '<td>' + trans["from"]["name"] + '</td>';
         str += '<td>' + trans["from"]["username"] + '</td>' + '<td>';
         order = trans["order"];

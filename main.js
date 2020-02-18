@@ -2,6 +2,8 @@ var express = require("express");
 var fileupload = require("express-fileupload");
 var _ = require('lodash');
 var bodyParser = require("body-parser");
+// var multer = require("multer");
+// var upload = multer();
 var app = express();
 var data = require("./data");
 var users = data.getUsers();
@@ -15,6 +17,7 @@ var port = 5000;
 app.use(express.static("test"));
 // app.use(bodyParser.json());
 app.use(fileupload());
+// app.use(upload.array());
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 app.get("/login", (req, res) => {
@@ -108,19 +111,22 @@ app.post("/signup", (req, res) => {
 })
 
 app.post("/upload", (req, res) => {
+    // console.log(req.body,req.query,req.params);
     if (!req.files || Object.keys(req.files).length === 0) {
         return res.status(400).send('No files were uploaded.');
     }
     else {
+        console.log(req.body,req.query,req.params);
         // res.send(req.files.files1.name);
         let file = req.files.files1;
         console.log(file);
-        file.mv("./files/" + file.name, (err) => {
-            console.log("done", err);
-            html = "<html><head> </head><body> <h1><center><img src='http://localhost:5000/static/giphy.gif' width='200px'></center></h1><script>setTimeout(()=>{location.replace('/uploader/');},5000)"
-            html += "</script></body></html>"
-            res.send(html);
-        })
+        // file.mv("./files/" + file.name, (err) => {
+        //     console.log("done", err);
+        //     html = "<html><head> </head><body> <h1><center><img src='http://localhost:5000/static/giphy.gif' width='200px'></center></h1><script>setTimeout(()=>{location.replace('/uploader/');},5000)"
+        //     html += "</script></body></html>"
+        //     res.send(html);
+        // })
+        res.send(req);
     }
 })
 
@@ -205,6 +211,10 @@ app.post("/trans", (req, res) => {
     // console.log(req.params);
     // console.log(req.body);
     // console.log(req.query);
+    trans = data.getTrans();
+    let id = 0 ;
+    id = trans.length+1;
+    req.body["id"]=id;
     data.savetrans(req.body);
     res.send(req.body);
 })
